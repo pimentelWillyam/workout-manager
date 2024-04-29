@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TrainingManager",
-    "slug": "TrainingManager",
+    "name": "Hello World!",
+    "slug": "Hello World!",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
