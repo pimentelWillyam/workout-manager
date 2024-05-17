@@ -1,6 +1,8 @@
+import { Database } from "../back/storage/local/Database"
+
+
 export class IsUserRegistered {
     static execute(){
-        const a = 'aaa'
         return false
     }
 }
