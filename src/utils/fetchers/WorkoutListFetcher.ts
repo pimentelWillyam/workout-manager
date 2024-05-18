@@ -3,19 +3,19 @@ export class WorkoutListFetcher {
         return[
             {
                 id: 1,
-                name: 'pushup'
+                name: 'Flexões'
             },
             {
                 id: 2,
-                name: 'pullup'
+                name: 'Flexões na barra fixa'
             },
             {
                 id: 3,
-                name: 'situp'
+                name: 'Abdominais'
             },
             {
                 id: 4,
-                name: 'squat'
+                name: 'Agachamentos'
             },
         ]
     }
