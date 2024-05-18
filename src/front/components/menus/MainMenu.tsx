@@ -13,7 +13,7 @@ export const MainMenu = () => {
   const handleNavigation = (where: string) => {
       switch (where) {
         case 'Exercícios':
-          navigation.navigate('Workouts')
+          navigation.navigate('WorkoutsScreen')
           break;
         case 'Mudar Exercícios Selecionados':
           navigation.navigate('WorkoutSelectionScreen')
