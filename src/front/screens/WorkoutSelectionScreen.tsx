@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import { NavigationStackTypes } from "../navigation/StackNavigator";
 import { useNavigation } from "@react-navigation/native";
-import { IsUserRegistered } from "../../utils/IsUserRegistered";
 import { WorkoutListFetcher } from "../../utils/fetchers/WorkoutListFetcher";
-import { Database } from "../../back/storage/local/Database";
-import SelectedWorkoutsList from '../components/lists/SelectedWorkoutsList';
+import ExercisesToWorkoutMenu from "../components/menus/ExercisesToWorkoutMenu";
 
 
 export default function WorkoutSelectionScreen() {
@@ -24,7 +22,7 @@ export default function WorkoutSelectionScreen() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <SelectedWorkoutsList />
+      <ExercisesToWorkoutMenu />
   </View>
   );
 }
