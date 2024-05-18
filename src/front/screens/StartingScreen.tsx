@@ -6,6 +6,7 @@ import { IsUserRegistered } from "../../utils/IsUserRegistered";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationStackTypes } from "../navigation/StackNavigator";
 import SelectedWorkoutsList from '../components/lists/SelectedWorkoutsList';
+import { MainMenu } from '../components/menus/MainMenu';
 
 export default function StartingScreen() {
 
@@ -23,7 +24,7 @@ export default function StartingScreen() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>oi</Text>
+      <MainMenu />
     </View>
   );
 }
