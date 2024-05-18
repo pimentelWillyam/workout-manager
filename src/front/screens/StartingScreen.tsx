@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { IsUserRegistered } from "../../utils/IsUserRegistered";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationStackTypes } from "../navigation/StackNavigator";
-import SelectedWorkoutsList from '../components/lists/SelectedWorkoutsList';
 import { MainMenu } from '../components/menus/MainMenu';
 
 export default function StartingScreen() {
@@ -15,8 +14,8 @@ export default function StartingScreen() {
 
   useEffect(() => {
     console.log('caiu no use effect')
-    if (IsUserRegistered.execute()) navigation.navigate('Workouts')
-    else navigation.navigate("WorkoutSelectionScreen")
+    // if (IsUserRegistered.execute()) navigation.navigate('Workouts')
+    // else navigation.navigate("WorkoutSelectionScreen")
   
     
   }, [])
