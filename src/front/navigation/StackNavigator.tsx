@@ -6,6 +6,10 @@ import WorkoutLevelTestScreen from "../screens/WorkoutLevelTestScreen"
 import WorkoutLevelScreen from "../screens/WorkoutLevelScreen";
 import WorkoutSelectionScreen from '../screens/WorkoutSelectionScreen';
 import React from "react";
+import { PushupsScreen } from "../screens/PushupsScreen";
+import { PullupsScreen } from "../screens/PullupsScreen";
+import { SitupsScreen } from "../screens/SitupsScreen";
+import { SquatsScreen } from "../screens/SquatsScreen";
 
 const Stack = createNativeStackNavigator()
 
@@ -17,7 +21,11 @@ export function StackNavigator(){
                 <Stack.Screen name="WorkoutSelectionScreen" component={WorkoutSelectionScreen} />
                 <Stack.Screen name="WorkoutLevelTestScreen" component={WorkoutLevelTestScreen} />
                 <Stack.Screen name="WorkoutLevelScreen" component={WorkoutLevelScreen} />
-                <Stack.Screen name="Workouts" component={WorkoutsScreen} />
+                <Stack.Screen name="WorkoutsScreen" component={WorkoutsScreen} />
+                <Stack.Screen name="PushupsScreen" component={PushupsScreen} />
+                <Stack.Screen name="PullupsScreen" component={PullupsScreen} />
+                <Stack.Screen name="SitupsScreen" component={SitupsScreen} />
+                <Stack.Screen name="SquatsScreen" component={SquatsScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
@@ -27,7 +35,12 @@ type NavigationStacks = {
     StartingScreen: undefined
     WorkoutSelectionScreen: undefined
     WorkoutLevelScreen: undefined
-    Workouts: undefined
+    WorkoutsScreen: undefined
+    PushupsScreen: undefined
+    PullupsScreen: undefined
+    SitupsScreen: undefined
+    SquatsScreen: undefined
+
 }
 
 export type NavigationStackTypes = NativeStackNavigationProp<NavigationStacks>
