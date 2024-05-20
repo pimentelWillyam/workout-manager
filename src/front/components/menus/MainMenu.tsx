@@ -36,17 +36,12 @@ export const MainMenu = () => {
   }, []);
 
   return (
-    <ScrollView w={["200", "300"]} h="80">
-      <Center mt="3" mb="4">
-        <Heading fontSize="xl">Menu Principal</Heading>
-      </Center>
-      <VStack flex="1">
-        {mainMenuOptions.map((option) => (
-          <Center key={option} py="4" >
-            <Text onPress={() => handleNavigation(option)}>{option}</Text>
-          </Center>
-        ))}
-      </VStack>
-    </ScrollView>
+    <VStack space={4} alignItems="center">
+    {MainMenuOptionsFetcher.execute().map((option) => {
+      return (
+        <Center w="64" h="20" bg="indigo.700" rounded="md" shadow={3}><Text onPress={() => handleNavigation(option)}>{option}</Text></Center>
+      )
+    })}
+  </VStack>
   );
 };
