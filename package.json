@@ -17,6 +17,7 @@
     "@react-navigation/native-stack": "^6.9.26",
     "@types/react-native-sqlite-storage": "^6.0.5",
     "expo": "~50.0.14",
+    "expo-sqlite": "~13.4.0",
     "expo-status-bar": "~1.11.1",
     "native-base": "^3.4.28",
     "normalize-css-color": "^1.0.2",
