@@ -1,9 +1,9 @@
-import { SQLiteDatabase } from "react-native-sqlite-storage"
+import * as SQLite from 'expo-sqlite';
 
 export interface IDatabase {
 
   start(): void
-  getConnection(): SQLiteDatabase
+  getConnection(): SQLite.SQLiteDatabase
   stop(): void
 
 }
