@@ -33,7 +33,7 @@ export default function ExercisesToWorkoutMenu() {
     <VStack space={4} alignItems="center">
       {WorkoutListFetcher.execute().map((workout) => {
         return (
-          <Center w="64" h="20" bg="indigo.700" rounded="md" shadow={3}><Text onPress={() => handleNavigation(workout.name)}>{workout.name}</Text></Center>
+          <Center w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text onPress={() => handleNavigation(workout.name)}>{workout.name}</Text></Center>
         )
       })}
     </VStack>
