@@ -5,9 +5,12 @@ import { Navigate } from "../../../handlers/Navigate";
 import { NavigationStackTypes } from "../../navigation/StackNavigator";
 import { useNavigation } from "@react-navigation/native";
 import { BackHandler } from "react-native";
+import { UserDataSource } from "../../../back/datasources/UserDataSource";
+import { ResultSet, ResultSetError } from "expo-sqlite";
 
 export const MainMenu = () => {
   const [mainMenuOptions, setMainMenuOptions] = useState<string[]>([]);
+
   const navigation = useNavigation<NavigationStackTypes>()
 
   const handleNavigation = (where: string) => {
@@ -30,6 +33,7 @@ export const MainMenu = () => {
   useEffect(() => {
     const fetchOptions = async () => {
         setMainMenuOptions(MainMenuOptionsFetcher.execute())
+        await UserDataSource.insertUserRegistry({name: 'willyam', current_pullup_level: 0, current_pushup_level: 0, current_situp_level: 0, current_squat_level: 0, tracking_pullups: 0, tracking_pushups: 0, tracking_situps: 0, tracking_squats: 0})
     }
 
     fetchOptions();

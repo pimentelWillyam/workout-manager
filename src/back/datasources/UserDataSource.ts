@@ -1,3 +1,4 @@
+import { ResultSet, ResultSetError } from "expo-sqlite";
 import { User } from "../model/User";
 import { Database } from "../storage/local/Database";
 import { SQLiteQueries} from "../storage/queries/SQLiteQueries";
@@ -16,9 +17,9 @@ export class UserDataSource {
     return user
   }
 
-  static async fetchEveryUserRegistry(): Promise<void> {
+  static async fetchEveryUserRegistry(): Promise<(ResultSetError | ResultSet)[]> {
     const result = await this.database.getConnection().execAsync([{sql: SQLiteQueries.fetchEveryUserRegistry, args: []}], true)
-    console.log(result)
+    return result
   }
 
   static async fetchUserRegistry(id: number): Promise<void> {
