@@ -39,7 +39,7 @@ export const MainMenu = () => {
     <VStack space={4} alignItems="center">
     {MainMenuOptionsFetcher.execute().map((option) => {
       return (
-        <Center w="64" h="20" bg="indigo.700" rounded="md" shadow={3}><Text onPress={() => handleNavigation(option)}>{option}</Text></Center>
+        <Center w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text onPress={() => handleNavigation(option)}>{option}</Text></Center>
       )
     })}
   </VStack>
