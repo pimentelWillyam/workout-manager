@@ -1,13 +1,14 @@
-import { openDatabase, SQLiteDatabase } from "react-native-sqlite-storage";
 import { IDatabase } from "../interfaces/IDatabase";
 import { SQLiteQueries } from "../queries/SQLiteQueries";
+import {SQLiteDatabase, openDatabase} from 'expo-sqlite';
+
 
 
 class DatabaseConnection{
   private static instance: SQLiteDatabase | undefined;
 
   static async getInstance(): Promise<SQLiteDatabase> {
-    if (this.instance === undefined) this.instance = await openDatabase({name: 'workout-manager', location: 'default'})
+    if (this.instance === undefined) this.instance = await openDatabase('workout-manager')
     return this.instance
   }
 }
@@ -28,13 +29,13 @@ export class Database implements IDatabase{
 
   stop(): void {
     if (this.connection === undefined) throw new Error('Não existe conexão com banco de dados para se encerrar')
-    this.connection.close()
+    this.connection.closeAsync()
     this.connection = undefined
   }
 
-  private bootstrap(): void {
+  private async bootstrap(): Promise<void> {
     if (this.connection === undefined) throw new Error('Conexão com o banco de dados não pode ser estabelecida')
-    this.connection.executeSql(SQLiteQueries.createDatabaseIfDoesNotExists, ['workout-manager'])
-    this.connection.executeSql(SQLiteQueries.createUserTableIfDoesNotExists)
+    await this.connection.execAsync([{sql: SQLiteQueries.createDatabaseIfDoesNotExists, args: []}], true)
+    await this.connection.execAsync([{sql: SQLiteQueries.createUserTableIfDoesNotExists, args: []}], true)
   }
 }
