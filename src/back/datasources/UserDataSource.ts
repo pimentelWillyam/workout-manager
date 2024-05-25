@@ -23,8 +23,9 @@ export class UserDataSource {
     await AsyncStorage.setItem('user', JSON.stringify(upToDateUser))
   }
 
-  static async deleteUserRegistry(id: number): Promise<void> {
+  static async deleteUserRegistry(): Promise<void> {
     // const result = await this.database.getConnection().executeSql(SQLiteQueries.deleteUserRegistry, [id])
+    AsyncStorage.removeItem('user')
   }
 
 
