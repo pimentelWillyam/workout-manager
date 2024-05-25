@@ -20,6 +20,7 @@
     "@types/react-native-sqlite-storage": "^6.0.5",
     "async-storage": "^0.1.0",
     "expo": "~50.0.14",
+    "expo-sqlite": "~13.4.0",
     "expo-status-bar": "~1.11.1",
     "native-base": "^3.4.28",
     "normalize-css-color": "^1.0.2",

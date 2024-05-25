@@ -1,7 +1,7 @@
-import { UserFactory } from "../factories/UserFactory";
+import { ResultSet, ResultSetError } from "expo-sqlite";
 import { User } from "../model/User";
 import { Database } from "../storage/local/Database";
-import { SQLiteQueries } from "../storage/queries/SQLiteQueries";
+import { SQLiteQueries} from "../storage/queries/SQLiteQueries";
 
 export class UserDataSource {
 
