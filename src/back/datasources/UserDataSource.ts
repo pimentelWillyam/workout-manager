@@ -8,6 +8,7 @@ export class UserDataSource {
 
   static async insertUserRegistry(user: User): Promise<void> {
     // const result = await this.database.getConnection().executeSql(SQLiteQueries.insertUserRegistry, [user.name, user.current_pushup_level, user.current_pullup_level, user.current_situp_level, user.current_squat_level, user.tracking_pushups, user.tracking_pullups, user.tracking_situps, user.tracking_squats])
+    await AsyncStorage.setItem('user', JSON.stringify(user))
   }
 
   static async fetchEveryUserRegistry(): Promise<void> {
