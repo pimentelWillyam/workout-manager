@@ -18,7 +18,7 @@ export class UserDataSource {
     return JSON.parse(userString) 
   }
 
-  static async updateUserRegistry(id: number, upToDateUser: User): Promise<void> {
+  static async updateUserRegistry(upToDateUser: User): Promise<void> {
     // this.database.getConnection().executeSql(SQLiteQueries.updateUserRegistry, [upToDateUser.name, upToDateUser.current_pushup_level, upToDateUser.current_pullup_level, upToDateUser.current_situp_level, upToDateUser.current_squat_level, upToDateUser.tracking_pushups, upToDateUser.tracking_pullups, upToDateUser.tracking_situps, upToDateUser.tracking_squats, id])
 
   }
