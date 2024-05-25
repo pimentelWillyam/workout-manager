@@ -1,7 +1,6 @@
-import { ResultSet, ResultSetError } from "expo-sqlite";
 import { User } from "../model/User";
 import { Database } from "../storage/local/Database";
-import { SQLiteQueries} from "../storage/queries/SQLiteQueries";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export class UserDataSource {
 
