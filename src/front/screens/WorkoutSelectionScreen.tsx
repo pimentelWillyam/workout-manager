@@ -4,6 +4,7 @@ import { NavigationStackTypes } from "../navigation/StackNavigator";
 import { useNavigation } from "@react-navigation/native";
 import { WorkoutListFetcher } from "../../utils/fetchers/WorkoutListFetcher";
 import ExercisesToWorkoutMenu from "../components/menus/ExercisesToWorkoutMenu";
+import WorkoutSelectionMenu from "../components/menus/WorkoutSelectionMenu";
 
 
 export default function WorkoutSelectionScreen() {
@@ -22,7 +23,7 @@ export default function WorkoutSelectionScreen() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <ExercisesToWorkoutMenu />
+      <WorkoutSelectionMenu />
   </View>
   );
 }

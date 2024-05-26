@@ -1,8 +1,8 @@
 import { User } from "../../model/User";
 
 export interface IUserController {
-  insertUser(userName: string): User 
-  fetchUser(id: number): User
-  updateUser(id: number, upToDateUser: User): User
-  deleteUser(id: number): User
+  insertUser(userName: string): Promise<void> 
+  fetchUser(): Promise<User | null>
+  updateUser(upToDateUser: User): Promise<void>
+  deleteUser(): Promise<void>
 }

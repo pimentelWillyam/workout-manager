@@ -1,9 +1,9 @@
 import { User } from "../model/User";
 
 export class UserFactory {
-  static execute(userName: string): User {
+  static execute(): User {
     return {
-      name: userName,
+      name: 'user',
       current_pullup_level: 0,
       current_pushup_level: 0,
       current_situp_level: 0,

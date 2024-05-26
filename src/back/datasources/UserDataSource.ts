@@ -11,10 +11,10 @@ export class UserDataSource {
     await AsyncStorage.setItem('user', JSON.stringify(user))
   }
 
-  static async fetchUserRegistry(id: number): Promise<User> {
+  static async fetchUserRegistry(): Promise<User | null> {
     // const result = await this.database.getConnection().executeSql(SQLiteQueries.fetchUserById, [id])
     const userString = await AsyncStorage.getItem('user')
-    if (userString === null) throw new Error('User not found')
+    if( userString === null) return null
     return JSON.parse(userString) 
   }
 

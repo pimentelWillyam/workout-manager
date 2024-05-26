@@ -5,21 +5,21 @@ import { IUserController } from "./interfaces/IUserController";
 
 export class UserController implements IUserController {
 
-  async insertUser(userName: string): Promise<User> {
-    const user = UserFactory.execute(userName)
+  async insertUser(): Promise<void> {
+    const user = UserFactory.execute()
     await UserDataSource.insertUserRegistry(user)
 
   }
 
-  async fetchUser(id: number): Promise<User> {
-    await UserDataSource.fetchUserRegistry(id)
+  async fetchUser(): Promise<User | null> {
+    return await UserDataSource.fetchUserRegistry()
   }
 
-  async updateUser(id: number, upToDateUser: User): User {
-    await UserDataSource.updateUserRegistry(id, upToDateUser)
+  async updateUser(upToDateUser: User): Promise<void> {
+    await UserDataSource.updateUserRegistry(upToDateUser)
   }
 
-  async deleteUser(id: number): User {
-    await UserDataSource.deleteUserRegistry(id)
+  async deleteUser(): Promise<void> {
+    await UserDataSource.deleteUserRegistry()
   }
 }

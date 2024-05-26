@@ -4,8 +4,8 @@ export type User = {
   current_pullup_level: number
   current_situp_level: number
   current_squat_level: number
-  tracking_pushups: number
-  tracking_pullups: number
-  tracking_situps: number
-  tracking_squats: number
+  tracking_pushups: boolean
+  tracking_pullups: boolean
+  tracking_situps: boolean
+  tracking_squats: boolean
 }
