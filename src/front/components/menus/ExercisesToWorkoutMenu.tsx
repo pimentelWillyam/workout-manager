@@ -5,6 +5,7 @@ import { VStack, Center } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationStackTypes } from "../../navigation/StackNavigator";
 import { GetUserSelectedExercises } from "../../../back/useCases/GetUserSelectedExercises";
+import { GetUserMaximumRepetitions } from "../../../back/useCases/GetUserMaximumRepetitions";
 
 export default function ExercisesToWorkoutMenu() {
 
@@ -21,17 +22,21 @@ export default function ExercisesToWorkoutMenu() {
   const handleNavigation = (where: string) => {
       switch (where) {
         case 'Flexões':
-          navigation.navigate('PushupsScreen')
+          GetUserMaximumRepetitions.execute('pushups').then(maximumRepetitions => {if (maximumRepetitions > 0) navigation.navigate('Flexão')})
+          GetUserMaximumRepetitions.execute('pushups').then(maximumRepetitions => {if (maximumRepetitions <= 0) navigation.navigate('Teste de nível de flexão')})
           break;
         case 'Flexões na barra fixa':
-          navigation.navigate('PullupsScreen')
-          break
+          GetUserMaximumRepetitions.execute('pullups').then(maximumRepetitions => {if (maximumRepetitions > 0) navigation.navigate('Barra')})
+          GetUserMaximumRepetitions.execute('pullups').then(maximumRepetitions => {if (maximumRepetitions <= 0) navigation.navigate('Teste de nível de barra')})
+          break;
         case 'Abdominais':
-          navigation.navigate('SitupsScreen')
-          break
+          GetUserMaximumRepetitions.execute('situps').then(maximumRepetitions => {if (maximumRepetitions > 0) navigation.navigate('Abdominais')})
+          GetUserMaximumRepetitions.execute('situps').then(maximumRepetitions => {if (maximumRepetitions <= 0) navigation.navigate('Teste de nível de abdominais')})
+          break;
         case 'Agachamentos':
-          navigation.navigate('SquatsScreen')
-          break
+          GetUserMaximumRepetitions.execute('squats').then(maximumRepetitions => {if (maximumRepetitions > 0) navigation.navigate('Agachamentos')})
+          GetUserMaximumRepetitions.execute('squats').then(maximumRepetitions => {if (maximumRepetitions <= 0) navigation.navigate('Teste de nível de agachamentos')})
+          break;
         default:
           throw new Error('Invalid navigation destiny')
       }

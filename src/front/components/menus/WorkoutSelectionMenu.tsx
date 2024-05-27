@@ -32,37 +32,29 @@ export default function WorkoutSelectionMenu() {
   const handleChoice = (choice: string) => {
     switch (choice) {
       case 'Flexões':
-        console.log('flexoes')
         setPushups(!pushups)
-        console.log(pushups)
         if (pushups) addExerciseToSelectedExercisesList('Flexões')
         else removeExerciseFromSelectedExercisesList('Flexões') 
         break;
       case 'Flexões na barra fixa':
-        console.log('barra')
         setPullups(!pullups)
-        console.log(pullups)
         if (pullups) addExerciseToSelectedExercisesList('Flexões na barra fixa')
         else removeExerciseFromSelectedExercisesList('Flexões na barra fixa')
         break
       case 'Abdominais':
-        console.log('abdominais')
         setSitups(!situps)
-        console.log(situps)
         if (situps) addExerciseToSelectedExercisesList('Abdominais')
         else removeExerciseFromSelectedExercisesList('Abdominais')
         break
       case 'Agachamentos':
-        console.log('agachamentos')
         setSquats(!squats)
-        console.log(squats)
         if (squats) addExerciseToSelectedExercisesList('Agachamentos')
         else removeExerciseFromSelectedExercisesList('Agachamentos')
         break
       case 'Confirmar':
-        console.log(selectedExercises)
+        (selectedExercises)
         UpdateSelectedExercises.execute(selectedExercises)
-        navigation.navigate('StartingScreen')
+        navigation.navigate('Menu Principal')
         break
       default:
         throw new Error('Invalid workout choice')

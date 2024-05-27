@@ -7825,6 +7825,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-form-component@^2.6.14:
+  version "2.6.14"
+  resolved "https://registry.yarnpkg.com/react-native-form-component/-/react-native-form-component-2.6.14.tgz#a82de6f13f28949370aafe09181fdd703665dfc4"
+  integrity sha512-OS2x+vrVy+hQxSjRVQRGwrFfBjjjZ/4hyVXdUuioOn1EKFNGJMc0XFClz4nyP7GLak/COf4KvH8atKqI8/30YQ==
+
 react-native-recyclerview-list@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/react-native-recyclerview-list/-/react-native-recyclerview-list-0.3.4.tgz#8e2e6c2ff9b745665f66b152e5126388a572087b"

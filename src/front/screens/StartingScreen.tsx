@@ -14,7 +14,7 @@ export default function StartingScreen() {
 
 
   useEffect(() => {
-    if (!IsUserRegistered.execute()) CreateUser.execute().then(() => navigation.navigate("WorkoutSelectionScreen"))
+    if (!IsUserRegistered.execute()) CreateUser.execute().then(() => navigation.navigate("Seleção de Exercício"))
   }, [])
 
 

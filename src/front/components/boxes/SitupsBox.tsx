@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react"
 import { Center, Flex, Text, VStack } from "native-base";
 import { GetUserWorkoutLoad } from "../../../back/useCases/GetUserWorkoutLoad";
 import { WorkoutLoad } from '../../../utils/types/WorkoutLoad';
+import { useNavigation } from "@react-navigation/native";
+import { NavigationStackTypes } from "../../navigation/StackNavigator";
+import { UpgradeUserMaximumRepetitions } from "../../../back/useCases/UpgradeUserMaximumRepetitions";
 
-export const PulllupsBox = () => {
+export const SitupsBox = () => {
+  const navigation = useNavigation<NavigationStackTypes>()
 
 
   const [workoutLoad, setWorkoutLoad] = useState<WorkoutLoad>({
@@ -23,12 +27,13 @@ export const PulllupsBox = () => {
     <Flex>
       <VStack >
         <Center key='titulo' w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Abdominais</Text></Center>
-        <br />
         <Center key="1" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Primeira repetição: {workoutLoad.firstRepetition} </Text></Center>
-        <Center key="2" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Primeira repetição: {workoutLoad.secondRepetition} </Text></Center>
-        <Center key="3" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Primeira repetição: {workoutLoad.thirdRepetition} </Text></Center>
-        <Center key="4" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Primeira repetição: {workoutLoad.fourthRepetition} </Text></Center>
-        <Center key="5" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Primeira repetição: {workoutLoad.fifthRepetition} </Text></Center>
+        <Center key="2" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Segunda repetição: {workoutLoad.secondRepetition} </Text></Center>
+        <Center key="3" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Terceira repetição: {workoutLoad.thirdRepetition} </Text></Center>
+        <Center key="4" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Quarta repetição: {workoutLoad.fourthRepetition} </Text></Center>
+        <Center key="5" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Quinta repetição: {workoutLoad.fifthRepetition} </Text></Center>
+        <Center key="botao-sucesso" w="64" h="20" bg="green.300" rounded="md" shadow={3}><Text onPress={() => UpgradeUserMaximumRepetitions.execute('situps').then(() => navigation.navigate('Menu Principal'))}>Sucesso</Text></Center>
+        <Center key="botao-falha" w="64" h="20" bg="red.300" rounded="md" shadow={3}><Text onPress={() => navigation.navigate('Menu Principal')}>Falha</Text></Center>
       </VStack>
     </Flex>
   )

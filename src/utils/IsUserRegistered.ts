@@ -6,8 +6,8 @@ export class IsUserRegistered {
 
     private static userController = new UserController()
 
-    static execute(){
-        if (this.userController.fetchUser() === null) return false
+    static async execute(){
+        if (await this.userController.fetchUser() === null) return false
         return true
     }
 }

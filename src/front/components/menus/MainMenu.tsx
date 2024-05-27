@@ -16,10 +16,10 @@ export const MainMenu = () => {
   const handleNavigation = (where: string) => {
       switch (where) {
         case 'Exercícios':
-          navigation.navigate('WorkoutsScreen')
+          navigation.navigate('Exercícios')
           break;
         case 'Mudar Exercícios Selecionados':
-          navigation.navigate('WorkoutSelectionScreen')
+          navigation.navigate('Seleção de Exercício')
           break
         case 'Sair':
           BackHandler.exitApp()
