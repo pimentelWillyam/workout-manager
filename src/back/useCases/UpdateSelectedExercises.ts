@@ -5,8 +5,11 @@ export class UpdateSelectedExercises {
   static async execute(selectedExercises: string[]) {
     const user = await this.userController.fetchUser()
     if (user === null) throw new Error('Error when retrieving user data')
+    user.tracking_pushups = false
+    user.tracking_pullups = false
+    user.tracking_situps = false
+    user.tracking_squats = false
     selectedExercises.map(exercise => {
-      console.log(exercise)
       switch (exercise) {
         case 'Flexões':
           user.tracking_pushups = true
