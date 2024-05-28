@@ -27,16 +27,18 @@ export const PushupsBox = () => {
 
   return(
     <Flex>
-      <VStack >
-        <Center key='titulo' w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Flexões</Text></Center>
-        <Center key="1" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Primeira repetição: {workoutLoad.firstRepetition} </Text></Center>
-        <Center key="2" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Segunda repetição: {workoutLoad.secondRepetition} </Text></Center>
-        <Center key="3" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Terceira repetição: {workoutLoad.thirdRepetition} </Text></Center>
-        <Center key="4" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Quarta repetição: {workoutLoad.fourthRepetition} </Text></Center>
-        <Center key="5" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Quinta repetição: {workoutLoad.fifthRepetition} </Text></Center>
-        <Center key="botao-sucesso" w="64" h="20" bg="green.300" rounded="md" shadow={3}><Text onPress={() => UpgradeUserMaximumRepetitions.execute('pushups').then(() => navigation.navigate('Menu Principal'))}>Sucesso</Text></Center>
-        <Center key="botao-falha" w="64" h="20" bg="red.300" rounded="md" shadow={3}><Text onPress={() => navigation.navigate('Menu Principal')}>Falha</Text></Center>
-      </VStack>
+      <Center>
+        <VStack >
+          <Center key='titulo' w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Flexões</Text></Center>
+          <Center key="1" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Primeira repetição: {workoutLoad.firstRepetition} </Text></Center>
+          <Center key="2" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Segunda repetição: {workoutLoad.secondRepetition} </Text></Center>
+          <Center key="3" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Terceira repetição: {workoutLoad.thirdRepetition} </Text></Center>
+          <Center key="4" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Quarta repetição: {workoutLoad.fourthRepetition} </Text></Center>
+          <Center key="5" w="64" h="20" bg="gray.300" rounded="md" shadow={3}><Text>Quinta repetição: {workoutLoad.fifthRepetition} </Text></Center>
+          <Center key="botao-sucesso" w="64" h="20" bg="green.300" rounded="md" shadow={3}><Text onPress={() => UpgradeUserMaximumRepetitions.execute('pushups').then(() => navigation.navigate('Menu Principal'))}>Sucesso</Text></Center>
+          <Center key="botao-falha" w="64" h="20" bg="red.300" rounded="md" shadow={3}><Text onPress={() => navigation.navigate('Menu Principal')}>Falha</Text></Center>
+        </VStack>
+      </Center>
     </Flex>
   )
 }
