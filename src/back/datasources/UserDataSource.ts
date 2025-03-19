@@ -1,6 +1,6 @@
 import { User } from "../model/User";
 import { Database } from "../storage/local/Database";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 export class UserDataSource {
 
